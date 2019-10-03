@@ -1,0 +1,24 @@
+---
+spring:
+  profiles: test
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: classpath:/config-repo
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    enabled-by-default: true
+  endpoint:
+    bus-env:
+      enabled: true
+    bus-refresh:
+      enabled: true
